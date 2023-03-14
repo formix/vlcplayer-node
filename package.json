@@ -1,0 +1,35 @@
+{
+  "name": "vlcplayer-node",
+  "version": "0.0.1",
+  "description": "A library for controlling VLC player on any system and OS including Raspberry PI.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --timeout 30000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formix/vlcplayer-node.git"
+  },
+  "keywords": [
+    "video",
+    "player",
+    "raspberrypi",
+    "iot",
+    "mp3",
+    "mp4",
+    "mpeg",
+    "ogg"
+  ],
+  "author": "Jean-Philippe Gravel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/formix/vlcplayer-node/issues"
+  },
+  "homepage": "https://github.com/formix/vlcplayer-node#readme",
+  "dependencies": {
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
