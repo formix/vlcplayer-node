@@ -28,12 +28,19 @@ export class VlcPlayer {
         if (this._vlc) {
             throw new Error(`VLC Process already started PID: ${this._vlc.pid}`);
         }
-        this._vlc = this.play(filePath, repeat);
+        this._vlc = true;
+        this.play(filePath, repeat);
 //        this._vlc.stdout.on("data", data => console.log(`STDOUT: ${data}`));
 //        this._vlc.stderr.on("data", data => console.log(`STDERR: ${data}`));
     }
 
     play(filePath, repeat = false) {
+        if (!this._vlc) {
+            throw new Error("VLC is not opened.");
+        }
+        if (this._vlc instanceof Object) {
+            this._vlc.kill();
+        }
         let options = [];
         if (process.platform === "win32") {
             options.push("-f");
@@ -43,7 +50,7 @@ export class VlcPlayer {
         }
         options.push("--no-video-title-show");
         options.push(filePath);
-        return spawn(this._executable, options);
+        this._vlc = spawn(this._executable, options);
     }
 
     /**
