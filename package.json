@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/formix/vlcplayer-node#readme",
   "dependencies": {
+    "telnet-client": "^2.0.8",
     "winston": "^3.8.2"
   },
   "devDependencies": {

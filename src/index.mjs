@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { Telnet } from "telnet-client";
 import fs from "fs";
 
 /**
@@ -14,6 +15,7 @@ export class VlcPlayer {
         if (process.platform === "win32") {
             this._executable = "vlc.exe"
         }
+        this._rc = new Telnet();
     }
 
     /**
@@ -21,26 +23,29 @@ export class VlcPlayer {
      * 
      * @param {string=} filePath - The file to play.
      */
-    open(filePath, repeat = false) {
+    async open(filePath, repeat = false) {
         if (!fs.existsSync(filePath)) {
             throw new Error(`File '${filePath}' does not exist.`);
         }
         if (this._vlc) {
             throw new Error(`VLC Process already started PID: ${this._vlc.pid}`);
         }
-        this._vlc = true;
         this.play(filePath, repeat);
-//        this._vlc.stdout.on("data", data => console.log(`STDOUT: ${data}`));
-//        this._vlc.stderr.on("data", data => console.log(`STDERR: ${data}`));
+
+        let options = [
+            "-f",
+            "--no-video-title-show",
+            "-I telnet",
+            "--telnet-host 127.0.0.1",
+            "--telnet-password xanadu"
+        ];
+        this._vlc = spawn(this._executable, options);
+
+        let res = this._rc.exec("playlist");
+        console.log(res);
     }
 
     play(filePath, repeat = false) {
-        if (!this._vlc) {
-            throw new Error("VLC is not opened.");
-        }
-        if (this._vlc instanceof Object) {
-            this._vlc.kill();
-        }
         let options = [];
         if (process.platform === "win32") {
             options.push("-f");
@@ -50,7 +55,6 @@ export class VlcPlayer {
         }
         options.push("--no-video-title-show");
         options.push(filePath);
-        this._vlc = spawn(this._executable, options);
     }
 
     /**
