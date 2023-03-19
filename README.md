@@ -59,10 +59,10 @@ whole thing is played in that sequence:
   8. Waiting 30 seconds means that the `Flying` video repeats and play for another 10 seconds.
   9. Jump to the `FallDown` video.
   10. Turn off video repetion.
-  11. Waiting for 15 seconds will let the player jump to `CropField` sincle `FallDown` duration is only 13 seconds.
+  11. Waiting for 15 seconds will let the player jump to `CropField` since `FallDown` duration is only 13 seconds.
   12. Turn on video repetition. The `CropField` video will repeat itself.
   13. Waiting 30 seconds means that the `CropField` video repeats and play for another 10 seconds.
-  14. The player is shutdown.
+  14. The player shuts down.
 
 From there, you got the gist of it. You could as well repeat the whole sequence bye wrapping 1-12
 into a while loop instead of closing. You could aso leave the `CropField` video run indefinitely
