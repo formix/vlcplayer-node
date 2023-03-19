@@ -45,9 +45,9 @@ await sleep(30);
 await player.close();
 ```
 
-The code adds all the video to the playlist, in declaration order. After the `for` loop,
-the first video (`BadWeather`) is displayed in the paused state. Then the
-whole thing is played in that sequence:
+The code adds all videos to the playlist, in declaration order. After the `for` loop, the first
+video (`BadWeather`) is displayed in the paused state, but you may not notice that since there is
+no sleep before the play command is called. Then the whole thing is played in that sequence:
 
   1. The `BadWeather` video is played for 25 seconds.
   2. Activate the repeat mode for the video that is actually running.
