@@ -10,7 +10,7 @@ npm install --save vlcplayer-node
 # Usage
 VlcPLayer is not an event emitter. Your logic have to take in consideration that you are handling
 a playlist. With this paradigm, you have to take video timing in consideration if you want to
-repeat a sequence or play something else baesed on external events. Look at the following example:
+repeat a sequence or play something else based on external events. Look at the following example:
 
 ```javascript
 import { VlcPlayer, sleep } from "vlcplayer-node"
@@ -68,5 +68,5 @@ From there, you got the gist of it. You could as well repeat the whole sequence 
 into a while loop instead of closing. You could aso leave the `CropField` video run indefinitely
 or until a given event.
 
-I developped this module after the OMX Player deprecation. Tested and working on Raspberry PI 4
-with the minimal Raspbian image (console only).
+I developped this module after the OMX Player deprecation for my escape games consulting work.
+Tested and working on Raspberry PI 4 with the minimal Raspbian image (console only).
