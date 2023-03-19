@@ -45,7 +45,7 @@ await sleep(30);
 await player.close();
 ```
 
-The code adds all the video to the playlist, in order. After the `for` loop,
+The code adds all the video to the playlist, in declaration order. After the `for` loop,
 the first video (`BadWeather`) is displayed in the paused state. Then the
 whole thing is played in that sequence:
 
@@ -64,7 +64,7 @@ whole thing is played in that sequence:
   13. Waiting 30 seconds means that the `CropField` video repeats and play for another 10 seconds.
   14. The player shuts down.
 
-From there, you got the gist of it. You could as well repeat the whole sequence bye wrapping 1-12
+From there, you got the gist of it. You could as well repeat the whole sequence by wrapping 1-12
 into a while loop instead of closing. You could aso leave the `CropField` video run indefinitely
 or until a given event.
 
