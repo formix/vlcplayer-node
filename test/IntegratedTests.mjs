@@ -1,22 +1,13 @@
-import {VlcPlayer} from "../lib/index.mjs"
+import { VlcPlayer, sleep } from "vlcplayer"
 
-
-const sleep = (time => new Promise(r => setTimeout(r, time * 1000)));
-
-let videoHome = "/var/xcape/videos/";
-if (process.platform === "win32") {
-    videoHome = "D:\\props\\oz\\Tornado\\";
-}
-
+let mediasHome = "/var/medias/";
 const VIDEOS = {
-    BadWeather: `${videoHome}Wizard-of-Oz-Tornado-2019_sc02_067_v001_BUFFER1-1080.mp4`,
-    Tornado: `${videoHome}Wizard-of-Oz-Tornado-2019_sc02_067_v001_TRIGGER1-1080.mp4`,
-    Flying: `${videoHome}Wizard-of-Oz-Tornado-2019_sc02_067_v001_BUFFER2-1080.mp4`,
-    FallDown: `${videoHome}Wizard-of-Oz-Tornado-2019_sc02_067_v001_TRIGGER2-1080.mp4`,
-    CropField: `${videoHome}Wizard-of-Oz-Tornado-2019_sc02_067_v001_BUFFER3-1080.mp4`
+    BadWeather: `${mediasHome}2019_sc02_067_v001_BUFFER1-1080.mp4`, // 20 seconds
+    Tornado: `${mediasHome}2019_sc02_067_v001_TRIGGER1-1080.mp4`,   // 20 seconds
+    Flying: `${mediasHome}2019_sc02_067_v001_BUFFER2-1080.mp4`,     // 20 seconds
+    FallDown: `${mediasHome}2019_sc02_067_v001_TRIGGER2-1080.mp4`,  // 13 seconds
+    CropField: `${mediasHome}2019_sc02_067_v001_BUFFER3-1080.mp4`   // 20 seconds
 };
-
-
 
 let player = new VlcPlayer();
 await player.open();
