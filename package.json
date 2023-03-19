@@ -25,11 +25,5 @@
   "bugs": {
     "url": "https://github.com/formix/vlcplayer-node/issues"
   },
-  "homepage": "https://github.com/formix/vlcplayer-node#readme",
-  "dependencies": {
-    "winston": "^3.8.2"
-  },
-  "devDependencies": {
-    "mocha": "^10.2.0"
-  }
+  "homepage": "https://github.com/formix/vlcplayer-node#readme"
 }
