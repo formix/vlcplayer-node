@@ -12,7 +12,7 @@ const VIDEOS = {
 let player = new VlcPlayer();
 await player.open();
 for (let key in VIDEOS) {
-    await player.enqueue(VIDEOS[key]);
+    await player.add(VIDEOS[key]);
 }
 await player.play(VIDEOS.BadWeather);
 await player.repeat("on");
