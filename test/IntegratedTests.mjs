@@ -14,6 +14,8 @@ await player.open();
 for (let key in VIDEOS) {
     await player.add(VIDEOS[key]);
 }
+console.log("Waiting 5 seconds before starting...");
+await sleep(5);
 await player.play(VIDEOS.BadWeather);
 await player.repeat("on");
 await sleep(25);
