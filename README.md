@@ -49,8 +49,8 @@ The code adds all videos to the playlist, in declaration order. After the `for` 
 video (`BadWeather`) is displayed in the paused state, but you may not notice that since there is
 no sleep before the play command is called. Then the whole thing is played in that sequence:
 
-  1. The `BadWeather` video is played for 25 seconds.
-  2. Activate the repeat mode for the video that is actually running.
+  1. The `BadWeather` video starts.
+  2. Activate the repeat mode.
   3. Sleep 25 seconds. Since `BadWather` is only 20 seconds long, it will repeat and play for another 5 seconds.
   4. The `Tornado` video starts.
   5. Turn off video repetion.
@@ -67,6 +67,12 @@ no sleep before the play command is called. Then the whole thing is played in th
 From there, you got the gist of it. You could as well repeat the whole sequence by wrapping 1-12
 into a while loop instead of closing. You could aso leave the `CropField` video run indefinitely
 or until a given event.
+
+You can also call `player.exec()` to execute any rc command that is not implemented right away. If
+you think that there is some other good abstraction to add to the player, feel free to implement
+that function send a pull request my way! Want to make it work under another OS? Don't ask me
+what I can do for you, ask yourself what you can do to make it happend... and send me a pull
+request with your own cross platform implemetation!
 
 I developped this module after the OMX Player deprecation for my escape games consulting work.
 Tested and working on Raspberry PI 4 with the minimal Raspbian image (console only).
