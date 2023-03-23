@@ -1,6 +1,6 @@
 {
   "name": "vlcplayer-node",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A library for controlling VLC player on Raspberry PI.",
   "main": "lib/index.js",
   "scripts": {
